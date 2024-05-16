@@ -58,7 +58,6 @@ export const Camera = () => {
           const offsetX = (videoWidth - drawWidth) / 2;
           const offsetY = (videoHeight - drawHeight) / 2;
 
-          // 縦横比に応じてキャンバスのサイズを変更
           displayCanvasRef.current.width = isVertical ? 270 : 480;
           displayCanvasRef.current.height = isVertical ? 480 : 270;
 
@@ -77,9 +76,9 @@ export const Camera = () => {
       }
     };
 
-    drawToCanvas(); // 初回描画
+    drawToCanvas();
 
-    const interval = setInterval(drawToCanvas, 100); // 0.1秒ごとに再描画
+    const interval = setInterval(drawToCanvas, 5);
 
     return () => clearInterval(interval);
   }, [isVertical]);
@@ -104,7 +103,7 @@ export const Camera = () => {
 
   const handleClear = () => {
     setImageSrc(null);
-    setIsVertical(true); // 初期状態にリセット
+    setIsVertical(true);
   };
 
   const toggleFrameOrientation = () => {
@@ -119,11 +118,13 @@ export const Camera = () => {
   });
 
   const containerStyles = {
-    width: "100%",
+    width: isVertical ? "50vw" : "90vw",
     maxWidth: isVertical ? "270px" : "480px",
-    height: "auto",
+    height: isVertical ? "90vw" : "50vw",
+    maxHeight: isVertical ? "480px" : "270px",
     position: "relative" as const,
     overflow: "hidden",
+    margin: "0 auto",
   };
 
   return (
