@@ -20,6 +20,7 @@ export const Camera = () => {
       .then((stream) => {
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
+          videoRef.current.play();
         }
       })
       .catch((err) => {
@@ -103,9 +104,11 @@ export const Camera = () => {
 
   const handleClear = () => {
     setImageSrc(null);
+    setIsVertical(true); // 初期状態にリセット
   };
 
   const toggleFrameOrientation = () => {
+    setImageSrc(null);
     setIsVertical(!isVertical);
   };
 
@@ -114,6 +117,14 @@ export const Camera = () => {
     height: "100%",
     objectFit: "cover" as const,
   });
+
+  const containerStyles = {
+    width: "100%",
+    maxWidth: isVertical ? "270px" : "480px",
+    height: "auto",
+    position: "relative" as const,
+    overflow: "hidden",
+  };
 
   return (
     <div>
@@ -125,24 +136,23 @@ export const Camera = () => {
             alignItems: "center",
           }}
         >
-          <div
-            style={{
-              width: isVertical ? "100%" : "100%",
-              height: isVertical ? "480px" : "270px",
-              position: "relative",
-              overflow: "hidden",
-              maxWidth: "480px",
-              margin: "0 auto",
-            }}
-          >
-            {imageSrc ? (
-              <img src={imageSrc} alt="Captured" style={getFrameStyles()} />
-            ) : (
-              <canvas ref={displayCanvasRef} style={getFrameStyles()} />
+          <div style={containerStyles}>
+            <canvas ref={displayCanvasRef} style={getFrameStyles()} />
+            {imageSrc && (
+              <img
+                src={imageSrc}
+                alt="Captured"
+                style={{
+                  ...getFrameStyles(),
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                }}
+              />
             )}
           </div>
-          <Space h="xl" />
-          <Group align="center">
+          <Space h="xs" />
+          <Group>
             <Button onClick={handleCapture}>撮影</Button>
             <Space h="xs" />
             <Switch
@@ -153,7 +163,12 @@ export const Camera = () => {
             <Button onClick={handleClear}>クリア</Button>
           </Group>
         </div>
-        <video ref={videoRef} style={{ display: "none" }} autoPlay />
+        <video
+          ref={videoRef}
+          style={{ display: "none" }}
+          playsInline
+          autoPlay
+        />
         <canvas ref={canvasRef} style={{ display: "none" }} />
       </Center>
     </div>
