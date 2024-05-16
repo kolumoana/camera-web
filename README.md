@@ -1,36 +1,5 @@
 # Camera Web
 
-![gif](./docs/camera.gif)
+## Demo
 
-Camera Web は、ウェブカメラを使用してリアルタイムでビデオを表示し、画像をキャプチャする機能を提供します。
-このアプリケーションは、Next.js と Mantine UI ライブラリを使用して構築されています。
-
-## 主な機能
-
-- ウェブカメラからのリアルタイムビデオフィード
-- 画像のキャプチャと表示
-- 画像のフレームの向き（縦または横）の切り替え
-
-## 使用技術
-
-- **Next.js**: フロントエンドフレームワーク
-- **React**: UI ライブラリ
-- **Mantine**: UI コンポーネントライブラリ
-- **TypeScript**: 静的型付けを提供する JavaScript のスーパーセット
-
-## セットアップ方法
-
-1. 依存関係のインストール:
-   ```bash
-   npm install
-   ```
-2. 開発サーバーの起動:
-   ```bash
-   npm run dev
-   ```
-
-## プロジェクト構造
-
-- `src/components/Camera.tsx`: カメラコンポーネント、ビデオフィードの処理と画像キャプチャ機能を含む
-- `src/app/page.tsx`: メインページコンポーネント、カメラコンポーネントを含む
-- `src/app/layout.tsx`: アプリケーションのルートレイアウト
+![gif](https://github.com/kolumoana/camera-web/blob/main/docs/play.gif?raw=true)
