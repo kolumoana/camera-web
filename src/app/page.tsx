@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <Title ta="center" m="xl">
-        Camera Web
+        Camera Web Check
       </Title>
       <Camera />
     </main>
