@@ -12,7 +12,11 @@ export const Camera = () => {
 
   useEffect(() => {
     const constraints = {
-      video: { facingMode: "environment" },
+      video: {
+        facingMode: "environment",
+        width: { ideal: 1920 },
+        height: { ideal: 1080 },
+      },
     };
 
     navigator.mediaDevices
@@ -58,8 +62,8 @@ export const Camera = () => {
           const offsetX = (videoWidth - drawWidth) / 2;
           const offsetY = (videoHeight - drawHeight) / 2;
 
-          displayCanvasRef.current.width = isVertical ? 270 : 480;
-          displayCanvasRef.current.height = isVertical ? 480 : 270;
+          displayCanvasRef.current.width = isVertical ? 1080 : 1920;
+          displayCanvasRef.current.height = isVertical ? 1920 : 1080;
 
           context.drawImage(
             videoRef.current,
