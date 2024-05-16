@@ -5,7 +5,7 @@ import { Button, Center, Group, Space, Stack, Switch } from "@mantine/core";
 
 export const Camera = () => {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
-  const [isVertical, setIsVertical] = useState(true);
+  const [isVertical, setIsVertical] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const displayCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -103,7 +103,7 @@ export const Camera = () => {
 
   const handleClear = () => {
     setImageSrc(null);
-    setIsVertical(true);
+    setIsVertical(false);
   };
 
   const toggleFrameOrientation = () => {
@@ -118,9 +118,9 @@ export const Camera = () => {
   });
 
   const containerStyles = {
-    width: isVertical ? "50vw" : "90vw",
+    width: isVertical ? "50.625vw" : "90vw",
     maxWidth: isVertical ? "270px" : "480px",
-    height: isVertical ? "90vw" : "50vw",
+    height: isVertical ? "90vw" : "50.625vw",
     maxHeight: isVertical ? "480px" : "270px",
     position: "relative" as const,
     overflow: "hidden",
