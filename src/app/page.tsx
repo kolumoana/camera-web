@@ -1,4 +1,4 @@
-import { Container, Space, Title } from "@mantine/core";
+import { Container, Title } from "@mantine/core";
 import { Camera } from "./Camera";
 
 export default function Home() {
