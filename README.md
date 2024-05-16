@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Camera Web
 
-## Getting Started
+Camera Web は、ウェブカメラを使用してリアルタイムでビデオを表示し、画像をキャプチャする機能を提供します。
+このアプリケーションは、Next.js と Mantine UI ライブラリを使用して構築されています。
 
-First, run the development server:
+## 主な機能
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ウェブカメラからのリアルタイムビデオフィード
+- 画像のキャプチャと表示
+- 画像のフレームの向き（縦または横）の切り替え
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 使用技術
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: フロントエンドフレームワーク
+- **React**: UI ライブラリ
+- **Mantine**: UI コンポーネントライブラリ
+- **TypeScript**: 静的型付けを提供する JavaScript のスーパーセット
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## セットアップ方法
 
-## Learn More
+1. 依存関係のインストール:
+   ```bash
+   npm install
+   ```
+2. 開発サーバーの起動:
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## プロジェクト構造
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `src/components/Camera.tsx`: カメラコンポーネント、ビデオフィードの処理と画像キャプチャ機能を含む
+- `src/app/page.tsx`: メインページコンポーネント、カメラコンポーネントを含む
+- `src/app/layout.tsx`: アプリケーションのルートレイアウト

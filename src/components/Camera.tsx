@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Button, Center, Group, Space, Stack, Switch } from "@mantine/core";
+import { Button, Center, Group, Space, Switch } from "@mantine/core";
 
 export const Camera = () => {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
