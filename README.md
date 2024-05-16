@@ -1,5 +1,7 @@
 # Camera Web
 
+![gif](./docs/camera.gif)
+
 Camera Web は、ウェブカメラを使用してリアルタイムでビデオを表示し、画像をキャプチャする機能を提供します。
 このアプリケーションは、Next.js と Mantine UI ライブラリを使用して構築されています。
 
