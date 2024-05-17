@@ -3,8 +3,8 @@ import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 
 export const metadata: Metadata = {
-  title: "Camera Example",
-  description: "Camera Example",
+  title: "Camera Web Check",
+  description: "Camera Web Check",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body>
         <MantineProvider>{children}</MantineProvider>
       </body>
